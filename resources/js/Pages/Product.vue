@@ -8,7 +8,7 @@
       </div>
       <div>
           <Link :href="route('checkout.pay', slug)" class="bg-indigo-600 block text-center text-white rounded p-3">
-            Bayar
+            Checkout
           </Link>
       </div>
   </GuestLayout>
