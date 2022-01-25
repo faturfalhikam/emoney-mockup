@@ -10,7 +10,7 @@
         </li>
     </ul>
 
-    <h2 class="font-bold border-b py-3 ">Transaksi Terakhir</h2>
+    <h2 class="font-bold border-b py-3 ">Last Transaction</h2>
     <ul class="divide-y">
         <li v-for="invoice in invoices" :key="invoice.id">
             <Link :href="route('invoice.check', invoice.id)" class="flex justify-between p-1 hover:bg-green-50 border border-transparent hover:border-green-500">
