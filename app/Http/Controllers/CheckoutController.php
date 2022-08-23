@@ -97,16 +97,17 @@ class CheckoutController extends Controller
     public function payShopee(Request $request, $slug)
     {
         $product = Config::get('product.' . $slug);
-        $phone = $request->phone;
+        $phone = '081231231231';
 
         $res = Http::withBasicAuth(Config::get('app.wpapi_key'), Config::get('app.wpsecret_key'))
                     ->withHeaders([
-                        'Content-Type'  => 'application/json'
+                        'Content-Type'  => 'application/json',
                     ])
                     ->post(Config::get('app.wpendpoint') . '/api/v3/payment/emoney', [
-                        'id'        => $phone,
-                        'channel'   => 'SHOPEEPAY',
-                        'amount'    => $product['price']
+                        'id'            => $phone,
+                        'channel'       => 'SHOPEEPAY',
+                        'amount'        => $product['price'],
+                        'redirect_url'  => route('shopeepay.redirect')
                     ]);
 
         if ($res->failed()) {
@@ -127,6 +128,7 @@ class CheckoutController extends Controller
 
             $body = json_decode($res->body(), true);
             $invoice = [
+                'channel'   => 'SHOPEEPAY',
                 'id'        => Str::uuid()->toString(),
                 'phone'     => $phone,
                 'product'   => $product,

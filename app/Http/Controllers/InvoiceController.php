@@ -34,6 +34,10 @@ class InvoiceController extends Controller
     {
         $invoice = $this->data->firstWhere('id', $uid);
 
+        if ($invoice['channel'] === 'SHOPEEPAY') {
+            return $this->displayShopeepayLanding($invoice);
+        }
+
         if (isset($invoice['payment']) && $invoice['payment']['status'] != 'unpaid') {
             return Inertia::render('Invoice', [
                 'invoice' => $invoice
@@ -65,5 +69,16 @@ class InvoiceController extends Controller
         }
 
         dd('error');
+    }
+
+    private function displayShopeepayLanding($invoice)
+    {
+        return Inertia::render('ShopeepayLanding', [
+            'invoice' => $invoice
+        ]);
+    }
+
+    public function shopeepayRedirect()
+    {
     }
 }
