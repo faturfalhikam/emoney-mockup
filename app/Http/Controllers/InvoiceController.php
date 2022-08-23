@@ -134,7 +134,7 @@ class InvoiceController extends Controller
         }
 
         if (
-            $invoice['payment']['status'] === 'paid' &&
+            $data['status'] === 'paid' &&
             intval($invoice['response']['amount']) === intval($data['amount'])
         ) {
             $skipped = $this->data->forget($key);
