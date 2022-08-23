@@ -78,10 +78,6 @@ class CheckoutController extends Controller
             Storage::put('invoice.json', json_encode($data));
 
             return redirect()->route('invoice.check', $invoice['id']);
-
-            // return Inertia::render('Invoice', [
-            //     'invoice' => $invoice,
-            // ]);
         }
 
         dd('Unknown error');
@@ -98,6 +94,7 @@ class CheckoutController extends Controller
     {
         $product = Config::get('product.' . $slug);
         $phone = '081231231231';
+        $uuid = Str::uuid()->toString();
 
         $res = Http::withBasicAuth(Config::get('app.wpapi_key'), Config::get('app.wpsecret_key'))
                     ->withHeaders([
@@ -107,7 +104,7 @@ class CheckoutController extends Controller
                         'id'            => $phone,
                         'channel'       => 'SHOPEEPAY',
                         'amount'        => $product['price'],
-                        'redirect_url'  => route('shopeepay.redirect')
+                        'redirect_url'  => route('shopeepay.redirect', $uuid)
                     ]);
 
         if ($res->failed()) {
@@ -128,8 +125,9 @@ class CheckoutController extends Controller
 
             $body = json_decode($res->body(), true);
             $invoice = [
+                'status'    => 'PENDING',
                 'channel'   => 'SHOPEEPAY',
-                'id'        => Str::uuid()->toString(),
+                'id'        => $uuid,
                 'phone'     => $phone,
                 'product'   => $product,
                 'response'  => $body

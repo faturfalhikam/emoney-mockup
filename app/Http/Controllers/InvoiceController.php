@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
 
 class InvoiceController extends Controller
@@ -20,14 +21,6 @@ class InvoiceController extends Controller
             $data = json_decode($data, true);
         }
         $this->data  = collect($data);
-    }
-
-    public function index()
-    {
-    }
-
-    public function view(string $uid)
-    {
     }
 
     public function check(string $uid)
@@ -78,7 +71,79 @@ class InvoiceController extends Controller
         ]);
     }
 
-    public function shopeepayRedirect()
+    /**
+     * Shopeepay redirect
+     *
+     * @param string $uid
+     * @return void
+     */
+    public function shopeepayRedirect(string $uid)
     {
+        $invoice = $this->data->firstWhere('id', $uid);
+
+        return Inertia::render('ShopeepayLandingInvoice', [
+            'invoice' => $invoice
+        ]);
+    }
+
+    /**
+     * Find invoice key
+     *
+     * @param string $key
+     * @return void
+     */
+    private function findKeyByRefNum($key)
+    {
+        foreach ($this->data->toArray() as $k => $v) {
+            if ($v['response']['ref_num'] === $key) {
+                return $k;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * handle apiv3 callback
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function shopeepayCallback(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'ref_num'       => 'required',
+            'payment_ref'   => 'required',
+            'channel'       => ['required', 'in:SPAY'],
+            'amount'        => ['required', 'integer'],
+            'admin'         => ['required', 'integer'],
+            'admin_payee'   => ['required', 'in:merchant,customer'],
+            'nett_amount'   => ['required', 'integer'],
+            'status'        => ['required', 'in:paid'],
+        ]);
+
+        if ($validator->fails()) {
+            return 'INVALID PAYLOAD';
+        }
+
+        $data = $validator->validated();
+        $invoice = $this->data->firstWhere('response.ref_num', $data['ref_num']);
+        $key = $this->findKeyByRefNum($data['ref_num']);
+
+        if (empty($invoice)) {
+            return 'INVALID REF NUMBER';
+        }
+
+        if (
+            $invoice['payment']['status'] === 'paid' &&
+            intval($invoice['response']['amount']) === intval($data['amount'])
+        ) {
+            $skipped = $this->data->forget($key);
+            $invoice['status'] = 'PAID';
+            $merged = array_merge($skipped->all(), [$invoice]);
+            Storage::put('invoice.json', json_encode($merged));
+            return 'ACCEPTED';
+        }
+
+        return 'ERROR';
     }
 }

@@ -1,1 +1,119 @@
-[{"channel":"SHOPEEPAY","id":"6431b705-acab-4433-9341-985bb88329d6","phone":"081231231231","product":{"name":"Gelas Kaca","price":4000,"description":"Quisque egestas turpis ut lorem eleifend, et malesuada arcu interdum. Vivamus gravida efficitur tellus at egestas. Nam et massa eu sem pellentesque tempor. Integer et eros in arcu sagittis pretium. Donec sodales varius tempus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae fringilla nisi. Morbi tristique purus tellus. Praesent pellentesque molestie tellus, sit amet tincidunt orci luctus ac. Suspendisse potenti. Fusce pulvinar nunc tellus, luctus vulputate nunc posuere ut. Phasellus in eros lorem. Nunc nec justo quis est vulputate porta sed vel sem."},"response":{"rc":"00","rd":"Sukses","ref_num":"soacf1dbaa-81a8-49ef-9726-8235aff12755","channel":"SHOPEEPAY","requested_at":"2022-08-22 16:21:51","amount":4000,"id":"081231231231","additional_data":{"url_web":"https:\/\/wsa.uat.wallet.airpay.co.id\/universal-link\/wallet\/pay?deep_and_deferred=1&token=dFhkbmR1bTBIamhW0lucMBT6oPTKifAMRT_omxZ3H0gUeqtIinSK3P2UfwQ","url_app":"shopeeid:\/\/main?apprl=%2Frn%2FTRANSFER_PAGE%3Fnavigate_url%3Dhttps%253A%252F%252Fwsa.uat.wallet.airpay.co.id%252Fwallet%252Fpay%253Ftoken%253DdFhkbmR1bTBIamhW0lucMBT6oPTKifAMRT_omxZ3H0gUeqtIinSK3P2UfwQ"}}},{"channel":"SHOPEEPAY","id":"fe950a00-530c-4eec-9a69-5bb9dae9b797","phone":"081231231231","product":{"name":"Gelas Kaca","price":4000,"description":"Quisque egestas turpis ut lorem eleifend, et malesuada arcu interdum. Vivamus gravida efficitur tellus at egestas. Nam et massa eu sem pellentesque tempor. Integer et eros in arcu sagittis pretium. Donec sodales varius tempus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae fringilla nisi. Morbi tristique purus tellus. Praesent pellentesque molestie tellus, sit amet tincidunt orci luctus ac. Suspendisse potenti. Fusce pulvinar nunc tellus, luctus vulputate nunc posuere ut. Phasellus in eros lorem. Nunc nec justo quis est vulputate porta sed vel sem."},"response":{"rc":"00","rd":"Sukses","ref_num":"soec1d4312-4526-46ac-a7c5-b741cb3d1052","channel":"SHOPEEPAY","requested_at":"2022-08-22 16:23:52","amount":4000,"id":"081231231231","additional_data":{"url_web":"https:\/\/wsa.uat.wallet.airpay.co.id\/universal-link\/wallet\/pay?deep_and_deferred=1&token=dFhkbmR1bTBIamhWxFOaOE_16OPPju5QATW7lcYRlzVgQFYLKZ3_j6sr6WE","url_app":"shopeeid:\/\/main?apprl=%2Frn%2FTRANSFER_PAGE%3Fnavigate_url%3Dhttps%253A%252F%252Fwsa.uat.wallet.airpay.co.id%252Fwallet%252Fpay%253Ftoken%253DdFhkbmR1bTBIamhWxFOaOE_16OPPju5QATW7lcYRlzVgQFYLKZ3_j6sr6WE"}}},{"channel":"SHOPEEPAY","id":"85e07430-7bdb-4897-84c0-2923ab51fd0d","phone":"081231231231","product":{"name":"Wajan Kecil","price":12000,"description":"Aliquam purus enim, gravida sit amet accumsan sed, elementum et sem. Pellentesque in porttitor leo. Fusce urna dui, condimentum eu feugiat vitae, rhoncus et dolor. Praesent auctor metus euismod magna pellentesque volutpat. Duis et convallis sem, sed euismod arcu. Nunc sit amet leo a lacus tempus elementum vel sit amet sapien. Aliquam erat volutpat. Sed augue turpis, aliquam at cursus non, interdum non diam."},"response":{"rc":"00","rd":"Sukses","ref_num":"sofe5122ae-24e8-47a7-a444-2fd918b6224b","channel":"SHOPEEPAY","requested_at":"2022-08-23 10:35:41","amount":12000,"id":"081231231231","additional_data":{"url_web":"https:\/\/wsa.uat.wallet.airpay.co.id\/universal-link\/wallet\/pay?deep_and_deferred=1&token=dFhkbmR1bTBIamhW1wuKKkb3oaWY2OkUU2yjxWUhpCRpzulSDoRrdB9OBNE","url_app":"shopeeid:\/\/main?apprl=%2Frn%2FTRANSFER_PAGE%3Fnavigate_url%3Dhttps%253A%252F%252Fwsa.uat.wallet.airpay.co.id%252Fwallet%252Fpay%253Ftoken%253DdFhkbmR1bTBIamhW1wuKKkb3oaWY2OkUU2yjxWUhpCRpzulSDoRrdB9OBNE"}}}]
+[
+    {
+        "channel": "SHOPEEPAY",
+        "id": "6431b705-acab-4433-9341-985bb88329d6",
+        "phone": "081231231231",
+        "product": {
+            "name": "Gelas Kaca",
+            "price": 4000,
+            "description": "Quisque egestas turpis ut lorem eleifend, et malesuada arcu interdum. Vivamus gravida efficitur tellus at egestas. Nam et massa eu sem pellentesque tempor. Integer et eros in arcu sagittis pretium. Donec sodales varius tempus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae fringilla nisi. Morbi tristique purus tellus. Praesent pellentesque molestie tellus, sit amet tincidunt orci luctus ac. Suspendisse potenti. Fusce pulvinar nunc tellus, luctus vulputate nunc posuere ut. Phasellus in eros lorem. Nunc nec justo quis est vulputate porta sed vel sem."
+        },
+        "response": {
+            "rc": "00",
+            "rd": "Sukses",
+            "ref_num": "soacf1dbaa-81a8-49ef-9726-8235aff12755",
+            "channel": "SHOPEEPAY",
+            "requested_at": "2022-08-22 16:21:51",
+            "amount": 4000,
+            "id": "081231231231",
+            "additional_data": {
+                "url_web": "https://wsa.uat.wallet.airpay.co.id/universal-link/wallet/pay?deep_and_deferred=1&token=dFhkbmR1bTBIamhW0lucMBT6oPTKifAMRT_omxZ3H0gUeqtIinSK3P2UfwQ",
+                "url_app": "shopeeid://main?apprl=%2Frn%2FTRANSFER_PAGE%3Fnavigate_url%3Dhttps%253A%252F%252Fwsa.uat.wallet.airpay.co.id%252Fwallet%252Fpay%253Ftoken%253DdFhkbmR1bTBIamhW0lucMBT6oPTKifAMRT_omxZ3H0gUeqtIinSK3P2UfwQ"
+            }
+        }
+    },
+    {
+        "channel": "SHOPEEPAY",
+        "id": "fe950a00-530c-4eec-9a69-5bb9dae9b797",
+        "phone": "081231231231",
+        "product": {
+            "name": "Gelas Kaca",
+            "price": 4000,
+            "description": "Quisque egestas turpis ut lorem eleifend, et malesuada arcu interdum. Vivamus gravida efficitur tellus at egestas. Nam et massa eu sem pellentesque tempor. Integer et eros in arcu sagittis pretium. Donec sodales varius tempus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae fringilla nisi. Morbi tristique purus tellus. Praesent pellentesque molestie tellus, sit amet tincidunt orci luctus ac. Suspendisse potenti. Fusce pulvinar nunc tellus, luctus vulputate nunc posuere ut. Phasellus in eros lorem. Nunc nec justo quis est vulputate porta sed vel sem."
+        },
+        "response": {
+            "rc": "00",
+            "rd": "Sukses",
+            "ref_num": "soec1d4312-4526-46ac-a7c5-b741cb3d1052",
+            "channel": "SHOPEEPAY",
+            "requested_at": "2022-08-22 16:23:52",
+            "amount": 4000,
+            "id": "081231231231",
+            "additional_data": {
+                "url_web": "https://wsa.uat.wallet.airpay.co.id/universal-link/wallet/pay?deep_and_deferred=1&token=dFhkbmR1bTBIamhWxFOaOE_16OPPju5QATW7lcYRlzVgQFYLKZ3_j6sr6WE",
+                "url_app": "shopeeid://main?apprl=%2Frn%2FTRANSFER_PAGE%3Fnavigate_url%3Dhttps%253A%252F%252Fwsa.uat.wallet.airpay.co.id%252Fwallet%252Fpay%253Ftoken%253DdFhkbmR1bTBIamhWxFOaOE_16OPPju5QATW7lcYRlzVgQFYLKZ3_j6sr6WE"
+            }
+        }
+    },
+    {
+        "channel": "SHOPEEPAY",
+        "id": "85e07430-7bdb-4897-84c0-2923ab51fd0d",
+        "phone": "081231231231",
+        "product": {
+            "name": "Wajan Kecil",
+            "price": 12000,
+            "description": "Aliquam purus enim, gravida sit amet accumsan sed, elementum et sem. Pellentesque in porttitor leo. Fusce urna dui, condimentum eu feugiat vitae, rhoncus et dolor. Praesent auctor metus euismod magna pellentesque volutpat. Duis et convallis sem, sed euismod arcu. Nunc sit amet leo a lacus tempus elementum vel sit amet sapien. Aliquam erat volutpat. Sed augue turpis, aliquam at cursus non, interdum non diam."
+        },
+        "response": {
+            "rc": "00",
+            "rd": "Sukses",
+            "ref_num": "sofe5122ae-24e8-47a7-a444-2fd918b6224b",
+            "channel": "SHOPEEPAY",
+            "requested_at": "2022-08-23 10:35:41",
+            "amount": 12000,
+            "id": "081231231231",
+            "additional_data": {
+                "url_web": "https://wsa.uat.wallet.airpay.co.id/universal-link/wallet/pay?deep_and_deferred=1&token=dFhkbmR1bTBIamhW1wuKKkb3oaWY2OkUU2yjxWUhpCRpzulSDoRrdB9OBNE",
+                "url_app": "shopeeid://main?apprl=%2Frn%2FTRANSFER_PAGE%3Fnavigate_url%3Dhttps%253A%252F%252Fwsa.uat.wallet.airpay.co.id%252Fwallet%252Fpay%253Ftoken%253DdFhkbmR1bTBIamhW1wuKKkb3oaWY2OkUU2yjxWUhpCRpzulSDoRrdB9OBNE"
+            }
+        }
+    },
+    {
+        "status": "PENDING",
+        "channel": "SHOPEEPAY",
+        "id": "6f855cff-4d2e-40e1-b813-f8845bc9a5e4",
+        "phone": "081231231231",
+        "product": {
+            "name": "Wajan Besar",
+            "price": 12000,
+            "description": "Aliquam purus enim, gravida sit amet accumsan sed, elementum et sem. Pellentesque in porttitor leo. Fusce urna dui, condimentum eu feugiat vitae, rhoncus et dolor. Praesent auctor metus euismod magna pellentesque volutpat. Duis et convallis sem, sed euismod arcu. Nunc sit amet leo a lacus tempus elementum vel sit amet sapien. Aliquam erat volutpat. Sed augue turpis, aliquam at cursus non, interdum non diam."
+        },
+        "response": {
+            "rc": "00",
+            "rd": "Sukses",
+            "ref_num": "so25eabca0-17bb-43f6-a6f7-5024f5e031cf",
+            "channel": "SHOPEEPAY",
+            "requested_at": "2022-08-23 14:32:56",
+            "amount": 12000,
+            "id": "081231231231",
+            "additional_data": {
+                "url_web": "https://wsa.uat.wallet.airpay.co.id/universal-link/wallet/pay?deep_and_deferred=1&token=dFhkbmR1bTBIamhWzASINRi68KyThPoTWTa2hU7IpvdLpJy_24gwFpZwdyg",
+                "url_app": "shopeeid://main?apprl=%2Frn%2FTRANSFER_PAGE%3Fnavigate_url%3Dhttps%253A%252F%252Fwsa.uat.wallet.airpay.co.id%252Fwallet%252Fpay%253Ftoken%253DdFhkbmR1bTBIamhWzASINRi68KyThPoTWTa2hU7IpvdLpJy_24gwFpZwdyg"
+            }
+        }
+    },
+    {
+        "status": "PENDING",
+        "channel": "SHOPEEPAY",
+        "id": "8e2a9cd9-ca7a-4799-b049-d868b44e4c3f",
+        "phone": "081231231231",
+        "product": {
+            "name": "Wajan Kecil",
+            "price": 12000,
+            "description": "Aliquam purus enim, gravida sit amet accumsan sed, elementum et sem. Pellentesque in porttitor leo. Fusce urna dui, condimentum eu feugiat vitae, rhoncus et dolor. Praesent auctor metus euismod magna pellentesque volutpat. Duis et convallis sem, sed euismod arcu. Nunc sit amet leo a lacus tempus elementum vel sit amet sapien. Aliquam erat volutpat. Sed augue turpis, aliquam at cursus non, interdum non diam."
+        },
+        "response": {
+            "rc": "00",
+            "rd": "Sukses",
+            "ref_num": "so81944b98-d955-4500-9012-581ccdc75686",
+            "channel": "SHOPEEPAY",
+            "requested_at": "2022-08-23 14:35:02",
+            "amount": 12000,
+            "id": "081231231231",
+            "additional_data": {
+                "url_web": "https://wsa.uat.wallet.airpay.co.id/universal-link/wallet/pay?deep_and_deferred=1&token=dFhkbmR1bTBIamhWlkePJg_z6aLIkbweQSOgyNbEwC8rA0nAFuOn5Erlv4g",
+                "url_app": "shopeeid://main?apprl=%2Frn%2FTRANSFER_PAGE%3Fnavigate_url%3Dhttps%253A%252F%252Fwsa.uat.wallet.airpay.co.id%252Fwallet%252Fpay%253Ftoken%253DdFhkbmR1bTBIamhWlkePJg_z6aLIkbweQSOgyNbEwC8rA0nAFuOn5Erlv4g"
+            }
+        }
+    }
+]

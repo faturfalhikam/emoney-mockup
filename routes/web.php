@@ -30,7 +30,7 @@ Route::post('/pay/{uid}/shopeepay', [CheckoutController::class, 'payShopee'])->n
 Route::post('/pay/{uid}', [CheckoutController::class, 'payDo'])->name('checkout.payDo');
 
 Route::get('/invoice', [InvoiceController::class, 'index'])->name('invoice.index');
-Route::get('/invoice/{uid}', [InvoiceController::class, 'view'])->name('invoice.view');
 Route::get('/invoice/{uid}', [InvoiceController::class, 'check'])->name('invoice.check');
 
-Route::get('/shopeepay/redirect', [InvoiceController::class, 'shopeepayRedirect'])->name('shopeepay.redirect');
+Route::get('/shopeepay/{uid}', [InvoiceController::class, 'shopeepayRedirect'])->name('shopeepay.redirect');
+Route::post('/shopeepay/callback', [InvoiceController::class, 'shopeepayCallback'])->name('shopeepay.callback');
