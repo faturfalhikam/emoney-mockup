@@ -115,7 +115,7 @@ class InvoiceController extends Controller
             'payment_ref'   => 'required',
             'channel'       => ['required', 'in:SPAY'],
             'amount'        => ['required', 'integer'],
-            'admin'         => ['required', 'integer'],
+            'admin'         => ['required', 'numeric'],
             'admin_payee'   => ['required', 'in:merchant,customer'],
             'nett_amount'   => ['required', 'integer'],
             'status'        => ['required', 'in:paid'],
