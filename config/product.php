@@ -41,5 +41,28 @@ return [
         'price'         => 335000,
         'description'   => 'Aliquam purus enim, gravida sit amet accumsan sed, elementum et sem. Pellentesque in porttitor leo. Fusce urna dui, condimentum eu feugiat vitae, rhoncus et dolor. Praesent auctor metus euismod magna pellentesque volutpat. Duis et convallis sem, sed euismod arcu. Nunc sit amet leo a lacus tempus elementum vel sit amet sapien. Aliquam erat volutpat. Sed augue turpis, aliquam at cursus non, interdum non diam.'
     ],
+    'sku-ab76jm'    => [
+        'name'          => 'Case 3',
+        'price'         => 1123,
+        'description'   => 'Aliquam purus enim, gravida sit amet accumsan sed, elementum et sem. Pellentesque in porttitor leo. Fusce urna dui, condimentum eu feugiat vitae, rhoncus et dolor. Praesent auctor metus euismod magna pellentesque volutpat. Duis et convallis sem, sed euismod arcu. Nunc sit amet leo a lacus tempus elementum vel sit amet sapien. Aliquam erat volutpat. Sed augue turpis, aliquam at cursus non, interdum non diam.'
+    ],
+
+    'sku-ab76jn'    => [
+        'name'          => 'Case 4',
+        'price'         => 1123,
+        'description'   => 'Aliquam purus enim, gravida sit amet accumsan sed, elementum et sem. Pellentesque in porttitor leo. Fusce urna dui, condimentum eu feugiat vitae, rhoncus et dolor. Praesent auctor metus euismod magna pellentesque volutpat. Duis et convallis sem, sed euismod arcu. Nunc sit amet leo a lacus tempus elementum vel sit amet sapien. Aliquam erat volutpat. Sed augue turpis, aliquam at cursus non, interdum non diam.'
+    ],
+
+    'sku-ab76jo'    => [
+        'name'          => 'Case 5',
+        'price'         => 10123,
+        'description'   => 'Aliquam purus enim, gravida sit amet accumsan sed, elementum et sem. Pellentesque in porttitor leo. Fusce urna dui, condimentum eu feugiat vitae, rhoncus et dolor. Praesent auctor metus euismod magna pellentesque volutpat. Duis et convallis sem, sed euismod arcu. Nunc sit amet leo a lacus tempus elementum vel sit amet sapien. Aliquam erat volutpat. Sed augue turpis, aliquam at cursus non, interdum non diam.'
+    ],
+
+    'sku-ab76jp'    => [
+        'name'          => 'Case 6',
+        'price'         => 100123,
+        'description'   => 'Aliquam purus enim, gravida sit amet accumsan sed, elementum et sem. Pellentesque in porttitor leo. Fusce urna dui, condimentum eu feugiat vitae, rhoncus et dolor. Praesent auctor metus euismod magna pellentesque volutpat. Duis et convallis sem, sed euismod arcu. Nunc sit amet leo a lacus tempus elementum vel sit amet sapien. Aliquam erat volutpat. Sed augue turpis, aliquam at cursus non, interdum non diam.'
+    ],
 
 ];

@@ -6,13 +6,37 @@
     <h2>Rp: {{ invoice.product.price }}</h2>
     <hr class="my-2" />
     <div class="py-5 mb-5">
-      <h3 class="text-lg font-bold mb-5">Pay with Shopee:</h3>
+      <h3 class="text-lg font-bold mb-5 text-center mb-5">Pay with Shopee:</h3>
       <div class="flex flex-col gap-3">
         <a
           :href="invoice.response.additional_data.url_app"
-          class="rounded p-2 shopee flex items-center justify-center"
+          class="
+            rounded
+            p-2
+            shopee
+            flex
+            items-center
+            justify-center
+            text-white
+            font-bold
+          "
         >
-          <img src="@/images/Shopeepay_Logo_White_Horizontal.png" class="h-6" />
+          Open Shopee App
+        </a>
+        <div class="text-center text-gray-400">or</div>
+        <a
+          :href="invoice.response.additional_data.url_web"
+          class="
+            rounded
+            p-2
+            shopee-border shopee-text
+            flex
+            items-center
+            justify-center
+            text-white
+          "
+        >
+          Pay via Web
         </a>
       </div>
     </div>

@@ -5,3 +5,11 @@
 .shopee {
     background: #e9572a;
 }
+
+.shopee-border {
+    border-color: #e9572a;
+}
+
+.shopee-text {
+    color: #e9572a;
+}
