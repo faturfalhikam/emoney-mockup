@@ -33,8 +33,8 @@ return [
         'description'   => 'Aliquam purus enim, gravida sit amet accumsan sed, elementum et sem. Pellentesque in porttitor leo. Fusce urna dui, condimentum eu feugiat vitae, rhoncus et dolor. Praesent auctor metus euismod magna pellentesque volutpat. Duis et convallis sem, sed euismod arcu. Nunc sit amet leo a lacus tempus elementum vel sit amet sapien. Aliquam erat volutpat. Sed augue turpis, aliquam at cursus non, interdum non diam.'
     ],
     'kompor'    => [
-        'name'          => 'Kompor Gas',
-        'price'         => 720000,
+        'name'          => 'Coffee Beans',
+        'price'         => 35000,
         'description'   => 'Aliquam purus enim, gravida sit amet accumsan sed, elementum et sem. Pellentesque in porttitor leo. Fusce urna dui, condimentum eu feugiat vitae, rhoncus et dolor. Praesent auctor metus euismod magna pellentesque volutpat. Duis et convallis sem, sed euismod arcu. Nunc sit amet leo a lacus tempus elementum vel sit amet sapien. Aliquam erat volutpat. Sed augue turpis, aliquam at cursus non, interdum non diam.'
     ],
 
