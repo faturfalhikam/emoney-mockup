@@ -104,6 +104,7 @@ class CheckoutController extends Controller
                         'id'            => $phone,
                         'channel'       => 'SHOPEEPAY',
                         'amount'        => $product['price'],
+                        'callback_url'  =>route('shopeepay.callback'),
                         'redirect_url'  => route('shopeepay.redirect', $uuid)
                     ]);
 
