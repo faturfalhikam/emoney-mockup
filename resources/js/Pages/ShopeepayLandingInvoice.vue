@@ -123,11 +123,7 @@
         </div>
       </div>
     </div>
-    <div
-      v-if="
-        invoice.payment === undefined || invoice.payment?.status == 'unpaid'
-      "
-    >
+    <div v-if="invoice.status != 'PAID'">
       <button
         class="bg-indigo-600 w-full text-center text-white rounded p-3"
         @click="handleCheckStatus"
