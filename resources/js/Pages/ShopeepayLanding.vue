@@ -24,7 +24,6 @@
 <script setup>
 import GuestLayout from "@/Layouts/Guest";
 import { Link } from "@inertiajs/inertia-vue3";
-import { Inertia } from "@inertiajs/inertia";
 
 defineProps(["invoice"]);
 </script>
