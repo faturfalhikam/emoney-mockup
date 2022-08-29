@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'piring'    => [
-        'name'          => 'Piring Kaca',
-        'price'         => 3000,
+    'test10k'    => [
+        'name'          => 'Test 10k',
+        'price'         => 10000,
         'description'   => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porta lectus ut enim mollis blandit. Quisque posuere nibh vitae dictum eleifend. Integer justo magna, molestie vitae volutpat quis, convallis sit amet ex. Fusce molestie neque in suscipit pellentesque. Nam molestie enim eget nisi efficitur, in ultricies orci interdum. Praesent quam diam, congue non consectetur non, congue nec tellus. Vivamus non hendrerit risus. Mauris ac dapibus lacus, non ultricies magna. In iaculis nibh odio, nec ultrices lectus facilisis et. Integer consequat diam eu magna commodo, consectetur placerat lacus tristique. Morbi mollis sem ac vehicula aliquam. Suspendisse tristique dapibus arcu, sit amet rhoncus quam dignissim quis. Vivamus feugiat elit vitae ante commodo fringilla. Etiam ac nulla sollicitudin, imperdiet urna sed, facilisis eros.'
     ],
     'sku-ab76jf'    => [
