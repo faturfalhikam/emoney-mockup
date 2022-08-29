@@ -64,6 +64,25 @@ class InvoiceController extends Controller
         dd('error');
     }
 
+    public function delete(string $uid)
+    {
+        $invoice = $this->data->firstWhere('id', $uid);
+        $key = $this->data->search(function ($value, $key) use ($uid) {
+            return $value['id'] === $uid;
+        });
+
+        if (empty($invoice)) {
+            return 'INVALID REF uid';
+        }
+
+        $skipped = $this->data->forget($key);
+        $invoice['status'] = 'CANCEL';
+        $merged = array_merge($skipped->all(), [$invoice]);
+
+        Storage::put('invoice.json', json_encode($merged));
+        return redirect()->route('shopeepay.redirect', $uid);
+    }
+
     private function displayShopeepayLanding($invoice)
     {
         return Inertia::render('ShopeepayLanding', [

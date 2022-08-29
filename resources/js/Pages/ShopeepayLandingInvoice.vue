@@ -26,7 +26,7 @@
             <p class="font-bold">Payment Success</p>
           </div>
 
-          <div v-else-if="invoice.payment?.status == 'declined'">
+          <div v-else-if="invoice.status == 'CANCEL'">
             <div class="flex items-center justify-center">
               <svg
                 class="w-20 h-20 text-red-400 animate-pulse"
@@ -43,7 +43,7 @@
                 ></path>
               </svg>
             </div>
-            <p class="font-bold">Payment Declined</p>
+            <p class="font-bold">Payment Cancelled</p>
           </div>
 
           <div v-else>
@@ -93,8 +93,8 @@
               rounded
               border border-red-300
             "
-            v-else-if="invoice.payment?.status == 'declined'"
-            >DECLINED</span
+            v-else-if="invoice.status == 'CANCEL'"
+            >CANCELLED</span
           >
           <span
             class="
@@ -123,7 +123,7 @@
         </div>
       </div>
     </div>
-    <div v-if="invoice.status != 'PAID'">
+    <div v-if="invoice.status === 'PENDING'">
       <button
         class="bg-indigo-600 w-full text-center text-white rounded p-3"
         @click="handleCheckStatus"
@@ -159,7 +159,7 @@ export default {
 
     onMounted(() => {
       setTimeout(() => {
-        if (props.invoice.status !== "PAID") {
+        if (props.invoice.status === "PENDING") {
           Inertia.get(route("shopeepay.redirect", props.invoice.id));
         }
       }, 3000);
