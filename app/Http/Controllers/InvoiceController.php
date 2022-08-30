@@ -132,7 +132,7 @@ class InvoiceController extends Controller
         $validator = Validator::make($request->all(), [
             'ref_num'       => 'required',
             'payment_ref'   => 'required',
-            'channel'       => ['required', 'in:SPAY'],
+            'channel'       => ['required', 'in:SHOPEEPAY'],
             'amount'        => ['required', 'integer'],
             'admin'         => ['required', 'numeric'],
             'admin_payee'   => ['required', 'in:merchant,customer'],

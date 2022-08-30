@@ -102,7 +102,7 @@ class CheckoutController extends Controller
                     ])
                     ->post(Config::get('app.wpendpoint') . '/api/v3/payment/emoney', [
                         'id'            => $phone,
-                        'channel'       => 'SPAY',
+                        'channel'       => 'SHOPEEPAY',
                         'amount'        => $product['price'],
                         'callback_url'  =>route('shopeepay.callback'),
                         'redirect_url'  => route('shopeepay.redirect', $uuid)
