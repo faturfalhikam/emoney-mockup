@@ -4,7 +4,7 @@
     <ul class="grid grid-cols-4 gap-3 my-2">
         <li v-for="(prod, key) in products" :key="key" class="hover:bg-green-50 border-transparent border hover:border hover:border-green-500">
             <Link :href="route('checkout.check', key)" class="flex flex-col justify-center items-center p-2">
-                <img class="rounded-sm" :src="'https://placem.at/things?w=100&h=100&random='+key" alt="" />
+                <img class="rounded-sm" :src="'https://picsum.photos/100/100?random='+key" alt="" />
                 <p class="text-sm font-medium text-gray-900 my-1 text-center">{{ prod.name }}</p>
             </Link>
         </li>

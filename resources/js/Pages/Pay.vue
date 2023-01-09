@@ -77,7 +77,7 @@ export default {
     return {
       ...toRefs(state),
       imageurl:
-        "https://placem.at/things?w=500&h=300&txt=" + props.product.name,
+        "https://picsum.photos/500/300?txt=" + props.product.name,
       handleClickPayWithOVO,
       handleClickPayWithShopeepay,
     };
