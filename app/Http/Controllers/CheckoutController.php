@@ -138,10 +138,66 @@ class CheckoutController extends Controller
             Storage::put('invoice.json', json_encode($data));
 
             return redirect()->route('invoice.check', $invoice['id']);
+        }
+    }
 
-            // return Inertia::render('Invoice', [
-            //     'invoice' => $invoice,
-            // ]);
+    /**
+     * Pay using speedcash
+     *
+     * @param Request $request
+     * @param string $slug
+     * @return void
+     */
+    public function paySpeedcash(Request $request, $slug)
+    {
+        $product = Config::get('product.' . $slug);
+        $phone = '081231231231';
+        $uuid = Str::uuid()->toString();
+
+        $res = Http::withBasicAuth(Config::get('app.wpapi_key'), Config::get('app.wpsecret_key'))
+                    ->withHeaders([
+                        'Content-Type'  => 'application/json',
+                    ])
+                    ->post(Config::get('app.wpendpoint') . '/api/v3/payment/emoney', [
+                        'id'            => $phone,
+                        'channel'       => 'SC',
+                        'amount'        => $product['price'],
+                        'callback_url'  =>route('shopeepay.callback'),
+                        'redirect_url'  => route('shopeepay.redirect', $uuid)
+                    ]);
+        dd($res->body());
+
+        if ($res->failed()) {
+            return Inertia::render('Pay', [
+                'product' => $product,
+                'slug' => $slug,
+                'error' => json_decode($res->body(), true)
+            ]);
+        }
+
+
+        if ($res->successful()) {
+            $existing = Storage::get('invoice.json');
+            if (empty($existing)) {
+                $existing = [];
+            } else {
+                $existing = json_decode($existing, true);
+            }
+
+            $body = json_decode($res->body(), true);
+            $invoice = [
+                'status'    => 'PENDING',
+                'channel'   => 'SPEEDCASH',
+                'id'        => $uuid,
+                'phone'     => $phone,
+                'product'   => $product,
+                'response'  => $body
+            ];
+
+            $data = array_merge($existing, [$invoice]);
+            Storage::put('invoice.json', json_encode($data));
+
+            return redirect()->route('invoice.check', $invoice['id']);
         }
     }
 

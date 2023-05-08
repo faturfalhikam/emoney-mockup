@@ -2,9 +2,9 @@
 
 return [
 
-    'wpendpoint' => env('WP_ENDPOINT'),
-    'wpapi_key' => env('WP_API_KEY'),
-    'wpsecret_key' => env('WP_SECRET_KEY'),
+    'wpendpoint' => env('WP_ENDPOINT', 'https://sandbox-api.bmstaging.id'),
+    'wpapi_key' => env('WP_API_KEY', '4d0cba482565a4380286a889'),
+    'wpsecret_key' => env('WP_SECRET_KEY', '48fac6002005607b7ba79d210ef38d1c36b433cc'),
 
     /*
     |--------------------------------------------------------------------------

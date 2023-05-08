@@ -20,6 +20,13 @@
         >
           <img src="@/images/ovo.png" class="h-6" />
         </Link>
+
+        <Link
+          class="bg-gray-600 rounded p-2 flex items-center justify-center text-white"
+          @click="handleClickPayWithSpeedcash"
+        >
+          Speedcash
+        </Link>
       </div>
     </div>
 
@@ -74,16 +81,27 @@ export default {
       );
     };
 
+    const handleClickPayWithSpeedcash = () => {
+      Inertia.post(
+        route("checkout.pay.speedcash", props.slug),
+        {
+          phone: state.phone,
+        },
+        {
+          replace: true,
+          preserveState: true,
+        }
+      );
+    };
+
     return {
       ...toRefs(state),
       imageurl:
         "https://picsum.photos/500/300?txt=" + props.product.name,
       handleClickPayWithOVO,
       handleClickPayWithShopeepay,
+      handleClickPayWithSpeedcash
     };
   },
 };
 </script>
-
-<style>
-</style>

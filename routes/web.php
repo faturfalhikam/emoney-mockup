@@ -27,6 +27,7 @@ Route::get('/checkout/{uid}', [CheckoutController::class, 'check'])->name('check
 Route::get('/pay/{uid}', [CheckoutController::class, 'pay'])->name('checkout.pay');
 Route::post('/pay/{uid}/ovo', [CheckoutController::class, 'payOvo'])->name('checkout.pay.ovo');
 Route::post('/pay/{uid}/shopeepay', [CheckoutController::class, 'payShopee'])->name('checkout.pay.shopeepay');
+Route::post('/pay/{uid}/speedcash', [CheckoutController::class, 'paySpeedcash'])->name('checkout.pay.speedcash');
 Route::post('/pay/{uid}', [CheckoutController::class, 'payDo'])->name('checkout.payDo');
 
 Route::get('/invoice', [InvoiceController::class, 'index'])->name('invoice.index');
