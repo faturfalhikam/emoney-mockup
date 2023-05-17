@@ -21199,7 +21199,10 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100"
 };
-var _hoisted_2 = {
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "p-2 bg-red-100 border border-red-600 text-red-600 rounded"
+}, " Failed to check payment status: timeout ", -1 /* HOISTED */);
+var _hoisted_3 = {
   "class": "w-full sm:max-w-md mt-6 p-6 bg-white shadow-md overflow-hidden sm:rounded-lg"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -21214,7 +21217,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       })];
     }),
     _: 1 /* STABLE */
-  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")])]);
+  })]), _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")])]);
 }
 
 /***/ }),
@@ -22263,7 +22266,10 @@ var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "class": "text-center text-gray-400"
 }, "or", -1 /* HOISTED */);
 var _hoisted_9 = ["href"];
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "text-sm text-gray-400"
+}, " You will be redirected to Shopee App to complete the payment. ", -1 /* HOISTED */);
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "grid grid-cols-2 gap-3"
 }, null, -1 /* HOISTED */);
 
@@ -22276,7 +22282,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, " Open Shopee App ", 8 /* PROPS */, _hoisted_7), _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
         href: $props.invoice.response.additional_data.url_web,
         "class": "rounded p-2 shopee-border shopee-text flex items-center justify-center text-white"
-      }, " Pay via Web ", 8 /* PROPS */, _hoisted_9)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div>\n        <span class=\"text-sm text-gray-400\">\n          You will be redirected to Shopee App to complete the payment.\n        </span>\n        <div class=\"text-center mt-5\">\n          <button\n            class=\"btn btn-primary text-red-700 hover:text-red-500\"\n            @click=\"handleCancelInvoice\"\n          >\n            Cancel Invoice\n          </button>\n        </div>\n      </div> ")]), _hoisted_10];
+      }, " Pay via Web ", 8 /* PROPS */, _hoisted_9)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+        "class": "text-center mt-12"
+      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+        "class": "btn btn-primary text-red-700 hover:text-red-500",
+        onClick: $setup.handleCancelInvoice
+      }, " Cancel Invoice ")])])]), _hoisted_11];
     }),
     _: 1 /* STABLE */
   });

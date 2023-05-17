@@ -16,6 +16,10 @@
       </Link>
     </div>
 
+    <div class="p-2 bg-red-100 border border-red-600 text-red-600 rounded">
+        Failed to check payment status: timeout
+    </div>
+
     <div
       class="
         w-full

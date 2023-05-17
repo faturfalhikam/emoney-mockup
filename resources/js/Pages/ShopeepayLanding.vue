@@ -38,11 +38,11 @@
           Pay via Web
         </a>
       </div>
-      <!-- <div>
+      <div>
         <span class="text-sm text-gray-400">
           You will be redirected to Shopee App to complete the payment.
         </span>
-        <div class="text-center mt-5">
+        <div class="text-center mt-12">
           <button
             class="btn btn-primary text-red-700 hover:text-red-500"
             @click="handleCancelInvoice"
@@ -50,7 +50,7 @@
             Cancel Invoice
           </button>
         </div>
-      </div> -->
+      </div>
     </div>
 
     <div class="grid grid-cols-2 gap-3"></div>
