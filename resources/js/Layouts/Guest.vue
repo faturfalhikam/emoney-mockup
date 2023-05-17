@@ -1,14 +1,6 @@
 <template>
   <div
-    class="
-      min-h-screen
-      flex flex-col
-      sm:justify-center
-      items-center
-      pt-6
-      sm:pt-0
-      bg-gray-100
-    "
+    class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100"
   >
     <div>
       <Link href="/">
@@ -16,21 +8,12 @@
       </Link>
     </div>
 
-    <div class="p-2 bg-red-100 border border-red-600 text-red-600 rounded">
+    <!-- <div class="p-2 bg-red-100 border border-red-600 text-red-600 rounded">
         Failed to check payment status: timeout
-    </div>
+    </div> -->
 
     <div
-      class="
-        w-full
-        sm:max-w-md
-        mt-6
-        p-6
-        bg-white
-        shadow-md
-        overflow-hidden
-        sm:rounded-lg
-      "
+      class="w-full sm:max-w-md mt-6 p-6 bg-white shadow-md overflow-hidden sm:rounded-lg"
     >
       <slot />
     </div>
