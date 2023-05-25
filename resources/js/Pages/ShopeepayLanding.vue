@@ -8,22 +8,13 @@
       <h3 class="text-lg font-bold mb-5 text-center mb-5">Pay with Shopee:</h3>
       <div class="flex flex-col gap-1">
         <a
-          :href="invoice.response.additional_data.url_app"
-          class="
-            rounded
-            p-2
-            shopee
-            flex
-            items-center
-            justify-center
-            text-white
-            font-bold
-          "
+          :href="invoice.response.additional_data.url_web"
+          class="rounded p-2 shopee flex items-center justify-center text-white font-bold"
         >
           Open Shopee App
         </a>
         <div class="text-center text-gray-400">or</div>
-        <a
+        <!-- <a
           :href="invoice.response.additional_data.url_web"
           class="
             rounded
@@ -36,7 +27,7 @@
           "
         >
           Pay via Web
-        </a>
+        </a> -->
       </div>
       <div>
         <span class="text-sm text-gray-400">
