@@ -13,7 +13,7 @@
         >
           Open Shopee App
         </a>
-        <div class="text-center text-gray-400">or</div>
+        <!-- <div class="text-center text-gray-400">or</div> -->
         <!-- <a
           :href="invoice.response.additional_data.url_web"
           class="
