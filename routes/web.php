@@ -3,6 +3,10 @@
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\InvoiceController;
+
+use App\Http\Controllers\Dana\CheckoutController as DanaCheckoutController;
+use App\Http\Controllers\Dana\Controller as DanaController;
+use App\Http\Controllers\Dana\InvoiceController as DanaInvoiceController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Route;
@@ -36,3 +40,24 @@ Route::delete('/invoice/{uid}', [InvoiceController::class, 'delete'])->name('inv
 
 Route::get('/shopeepay/{uid}', [InvoiceController::class, 'shopeepayRedirect'])->name('shopeepay.redirect');
 Route::post('/shopeepay/callback', [InvoiceController::class, 'shopeepayCallback'])->name('shopeepay.callback');
+
+
+Route::prefix('/dana')->name('dana.')->group(function(){
+    Route::get('/', [DanaController::class, 'index'])->name('app.index');
+
+    Route::get('/checkout', [DanaCheckoutController::class, 'index'])->name('checkout.index');
+
+    Route::get('/checkout/{uid}', [DanaCheckoutController::class, 'check'])->name('checkout.check');
+    Route::get('/pay/{uid}', [DanaCheckoutController::class, 'pay'])->name('checkout.pay');
+    Route::post('/pay/{uid}/ovo', [DanaCheckoutController::class, 'payOvo'])->name('checkout.pay.ovo');
+    Route::post('/pay/{uid}/shopeepay', [DanaCheckoutController::class, 'payShopee'])->name('checkout.pay.shopeepay');
+    Route::post('/pay/{uid}/speedcash', [DanaCheckoutController::class, 'paySpeedcash'])->name('checkout.pay.speedcash');
+    Route::post('/pay/{uid}', [DanaCheckoutController::class, 'payDo'])->name('checkout.payDo');
+
+    Route::get('/invoice', [DanaInvoiceController::class, 'index'])->name('invoice.index');
+    Route::get('/invoice/{uid}', [DanaInvoiceController::class, 'check'])->name('invoice.check');
+    Route::delete('/invoice/{uid}', [DanaInvoiceController::class, 'delete'])->name('invoice.delete');
+
+    Route::get('/shopeepay/{uid}', [DanaInvoiceController::class, 'shopeepayRedirect'])->name('shopeepay.redirect');
+    Route::post('/shopeepay/callback', [DanaInvoiceController::class, 'shopeepayCallback'])->name('shopeepay.callback');
+});
