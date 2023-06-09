@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
@@ -75,7 +76,7 @@ class CheckoutController extends Controller
             ];
 
             $data = array_merge($existing, [$invoice]);
-            Storage::put('invoice.json', json_encode($data));
+            Storage::put('invoice.json', json_encode($data, true));
 
             return redirect()->route('invoice.check', $invoice['id']);
         }
@@ -97,16 +98,18 @@ class CheckoutController extends Controller
         $uuid = Str::uuid()->toString();
 
         $res = Http::withBasicAuth(Config::get('app.wpapi_key'), Config::get('app.wpsecret_key'))
-            ->withHeaders([
-                'Content-Type'  => 'application/json',
-            ])
-            ->post(Config::get('app.wpendpoint') . '/api/v3/payment/emoney', [
-                'id'            => $phone,
-                'channel'       => 'SPAY',
-                'amount'        => $product['price'],
-                'callback_url'  => route('shopeepay.callback'),
-                'redirect_url'  => route('shopeepay.redirect', $uuid)
-            ]);
+                    ->withHeaders([
+                        'Content-Type'  => 'application/json',
+                    ])
+                    ->post(Config::get('app.wpendpoint') . '/api/v3/payment/emoney', [
+                        'id'            => $phone,
+                        'channel'       => 'SPAY',
+                        'amount'        => $product['price'],
+                        'callback_url'  => route('shopeepay.callback'),
+                        'redirect_url'  => route('shopeepay.redirect', $uuid),
+                        'display_name'  => 'bayar',
+                        'expired_time'  => Carbon::now('Asia/Jakarta')->addMinutes(50)->format('YmdHi')
+                    ]);
 
         if ($res->failed()) {
             return Inertia::render('Pay', [
@@ -135,7 +138,7 @@ class CheckoutController extends Controller
             ];
 
             $data = array_merge($existing, [$invoice]);
-            Storage::put('invoice.json', json_encode($data));
+            Storage::put('invoice.json', json_encode($data, true));
 
             return redirect()->route('invoice.check', $invoice['id']);
         }
@@ -246,7 +249,7 @@ class CheckoutController extends Controller
             ];
 
             $data = array_merge($existing, [$invoice]);
-            Storage::put('invoice.json', json_encode($data));
+            Storage::put('invoice.json', json_encode($data, true));
 
             return redirect()->route('invoice.check', $invoice['id']);
         }

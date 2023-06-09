@@ -7,9 +7,9 @@
         <BreezeApplicationLogo class="w-20 h-20 fill-current text-gray-500" />
       </Link>
     </div>
-
-    <!-- <div class="p-2 bg-red-100 border border-red-600 text-red-600 rounded">
-        Failed to check payment status: timeout
+    <!--
+    <div class="p-2 bg-red-100 border border-red-600 text-red-600 rounded">
+      Failed to check payment status: timeout
     </div> -->
 
     <div

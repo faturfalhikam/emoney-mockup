@@ -46,6 +46,26 @@
             <p class="font-bold">Payment Cancelled</p>
           </div>
 
+          <div v-else-if="invoice.status == 'EXPIRED'">
+            <div class="flex items-center justify-center">
+              <svg
+                class="w-20 h-20 text-red-400 animate-pulse"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <p class="font-bold">Invoice Expired</p>
+          </div>
+
           <div v-else>
             <div class="flex items-center justify-center">
               <svg
@@ -73,50 +93,27 @@
         <div class="mb-2">
           <h3 class="text-gray-600">Status Payment:</h3>
           <span
-            class="
-              bg-green-200
-              px-2
-              py-1
-              inline-block
-              rounded
-              border border-green-300
-            "
+            class="bg-green-200 px-2 py-1 inline-block rounded border border-green-300"
             v-if="invoice.status == 'PAID'"
             >PAID</span
           >
           <span
-            class="
-              bg-red-200
-              px-2
-              py-1
-              inline-block
-              rounded
-              border border-red-300
-            "
+            class="bg-red-200 px-2 py-1 inline-block rounded border border-red-300"
             v-else-if="invoice.status == 'CANCEL'"
             >CANCELLED</span
           >
           <span
-            class="
-              bg-red-200
-              px-2
-              py-1
-              inline-block
-              rounded
-              border border-red-300
-            "
+            class="bg-red-200 px-2 py-1 inline-block rounded border border-red-300"
+            v-else-if="invoice.status == 'EXPIRED'"
+            >EXPIRED</span
+          >
+          <span
+            class="bg-red-200 px-2 py-1 inline-block rounded border border-red-300"
             v-else-if="invoice.payment?.status == 'timeout'"
             >TIMEOUT</span
           >
           <span
-            class="
-              bg-yellow-200
-              px-2
-              py-1
-              inline-block
-              rounded
-              border border-yellow-300
-            "
+            class="bg-yellow-200 px-2 py-1 inline-block rounded border border-yellow-300"
             v-else
             >PENDING</span
           >
@@ -173,5 +170,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
