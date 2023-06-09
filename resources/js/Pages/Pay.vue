@@ -27,6 +27,12 @@
         >
           Speedcash
         </Link>
+        <Link
+          class="shadow-md rounded p-2 flex items-center justify-center"
+          @click="handleClickPayWithDana"
+        >
+          <img src="@/images/Dana_logo.png" class="h-6" />
+        </Link>
       </div>
     </div>
 
@@ -67,6 +73,18 @@ export default {
         }
       );
     };
+    const handleClickPayWithDana = () => {
+        Inertia.post(
+        route("checkout.pay.dana", props.slug),
+        {
+          phone: state.phone,
+        },
+        {
+          replace: true,
+          preserveState: true,
+        }
+      );
+    }
 
     const handleClickPayWithShopeepay = () => {
       Inertia.post(
@@ -100,7 +118,8 @@ export default {
         "https://picsum.photos/500/300?txt=" + props.product.name,
       handleClickPayWithOVO,
       handleClickPayWithShopeepay,
-      handleClickPayWithSpeedcash
+      handleClickPayWithSpeedcash,
+      handleClickPayWithDana
     };
   },
 };

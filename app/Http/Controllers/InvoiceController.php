@@ -27,8 +27,14 @@ class InvoiceController extends Controller
     {
         $invoice = $this->data->firstWhere('id', $uid);
 
+
+        return $invoice;
+
         if ($invoice['channel'] === 'SHOPEEPAY') {
             return $this->displayShopeepayLanding($invoice);
+        }
+        if ($invoice['channel'] === 'DANA') {
+            return $this->displayDanaLanding($invoice);
         }
 
         if (isset($invoice['payment']) && $invoice['payment']['status'] != 'unpaid') {
@@ -89,6 +95,12 @@ class InvoiceController extends Controller
             'invoice' => $invoice
         ]);
     }
+    private function displayDanaLanding($invoice)
+    {
+        return Inertia::render('DanaLanding', [
+            'invoice' => $invoice
+        ]);
+    }
 
     /**
      * Shopeepay redirect
@@ -128,6 +140,54 @@ class InvoiceController extends Controller
      * @return void
      */
     public function shopeepayCallback(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'ref_num'       => 'required',
+            'payment_ref'   => 'required',
+            'channel'       => ['required', 'in:SPAY,OVO,SC,SPEEDCASH'],
+            'amount'        => ['required', 'numeric'],
+            'admin'         => ['required', 'numeric'],
+            'admin_payee'   => ['required', 'in:merchant,customer'],
+            'nett_amount'   => ['required', 'numeric'],
+            'status'        => ['required', 'in:paid'],
+        ]);
+
+        if ($validator->fails()) {
+            return 'INVALID PAYLOAD';
+        }
+
+        $data = $validator->validated();
+        $invoice = $this->data->firstWhere('response.ref_num', $data['ref_num']);
+        $key = $this->findKeyByRefNum($data['ref_num']);
+
+        if (empty($invoice)) {
+            return 'INVALID REF NUMBER';
+        }
+
+        if (
+            $data['status'] === 'paid' &&
+            intval($invoice['response']['amount']) === intval($data['amount'])
+        ) {
+            $skipped = $this->data->forget($key);
+            $invoice['status'] = 'PAID';
+            $merged = array_merge($skipped->all(), [$invoice]);
+            Storage::put('invoice.json', json_encode($merged));
+            return 'ACCEPTED';
+        }
+
+        return 'ERROR';
+    }
+
+    public function danaRedirect(string $uid)
+    {
+        $invoice = $this->data->firstWhere('id', $uid);
+
+        return Inertia::render('DanaLandingInvoice', [
+            'invoice' => $invoice
+        ]);
+    }
+
+    public function danaCallback(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'ref_num'       => 'required',
