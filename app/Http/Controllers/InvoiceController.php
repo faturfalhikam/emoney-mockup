@@ -192,7 +192,7 @@ class InvoiceController extends Controller
         $validator = Validator::make($request->all(), [
             'ref_num'       => 'required',
             'payment_ref'   => 'required',
-            'channel'       => ['required', 'in:SPAY,OVO,SC,SPEEDCASH'],
+            'channel'       => ['required', 'in:SPAY,OVO,SC,SPEEDCASH,DANA'],
             'amount'        => ['required', 'numeric'],
             'admin'         => ['required', 'numeric'],
             'admin_payee'   => ['required', 'in:merchant,customer'],
@@ -201,7 +201,7 @@ class InvoiceController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return 'INVALID PAYLOAD';
+            return $validator->errors();
         }
 
         $data = $validator->validated();
