@@ -5,11 +5,11 @@
     <h2>Rp: {{ invoice.product.price }}</h2>
     <hr class="my-2" />
     <div class="py-5 mb-5">
-      <h3 class="text-lg font-bold mb-5 text-center mb-5">Pay with Shopee:</h3>
+      <h3 class="text-lg font-bold mb-5 text-center mb-5">Pay:</h3>
       <div class="flex flex-col gap-1">
         <a
           :href="invoice.response.additional_data.url_web"
-          class="rounded p-2 shopee flex items-center justify-center text-white font-bold"
+          class="rounded p-2 dana flex items-center justify-center text-white font-bold"
         >
           Open Dana App
         </a>
@@ -31,7 +31,7 @@
       </div>
       <div>
         <span class="text-sm text-gray-400">
-          You will be redirected to Shopee App to complete the payment.
+          You will be redirected to Dana App to complete the payment.
         </span>
         <div class="text-center mt-12">
           <button

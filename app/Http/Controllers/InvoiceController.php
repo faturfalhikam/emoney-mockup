@@ -27,9 +27,6 @@ class InvoiceController extends Controller
     {
         $invoice = $this->data->firstWhere('id', $uid);
 
-
-        return $invoice;
-
         if ($invoice['channel'] === 'SHOPEEPAY') {
             return $this->displayShopeepayLanding($invoice);
         }

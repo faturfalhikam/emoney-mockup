@@ -21929,14 +21929,14 @@ var _hoisted_4 = {
 };
 var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
   "class": "text-lg font-bold mb-5 text-center mb-5"
-}, "Pay with Shopee:", -1 /* HOISTED */);
+}, "Pay:", -1 /* HOISTED */);
 var _hoisted_6 = {
   "class": "flex flex-col gap-1"
 };
 var _hoisted_7 = ["href"];
 var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "text-sm text-gray-400"
-}, " You will be redirected to Shopee App to complete the payment. ", -1 /* HOISTED */);
+}, " You will be redirected to Dana App to complete the payment. ", -1 /* HOISTED */);
 var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "grid grid-cols-2 gap-3"
 }, null, -1 /* HOISTED */);
@@ -21946,7 +21946,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_1, "Invoice: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.invoice.id), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.invoice.product.name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Rp: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.invoice.product.price), 1 /* TEXT */), _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
         href: $props.invoice.response.additional_data.url_web,
-        "class": "rounded p-2 shopee flex items-center justify-center text-white font-bold"
+        "class": "rounded p-2 dana flex items-center justify-center text-white font-bold"
       }, " Open Dana App ", 8 /* PROPS */, _hoisted_7), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"text-center text-gray-400\">or</div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <a\n          :href=\"invoice.response.additional_data.url_web\"\n          class=\"\n            rounded\n            p-2\n            shopee-border shopee-text\n            flex\n            items-center\n            justify-center\n            text-white\n          \"\n        >\n          Pay via Web\n        </a> ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
         "class": "text-center mt-12"
       }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
