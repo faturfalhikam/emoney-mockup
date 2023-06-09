@@ -88,6 +88,11 @@ class InvoiceController extends Controller
         if ($invoice['status'] === 'CANCEL') {
             return redirect()->route('shopeepay.redirect', $invoice['id']);
         }
+
+        if ($invoice['status'] === 'EXPIRED') {
+            return redirect()->route('shopeepay.redirect', $invoice['id']);
+        }
+
         return Inertia::render('ShopeepayLanding', [
             'invoice' => $invoice
         ]);
