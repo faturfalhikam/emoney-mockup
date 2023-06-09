@@ -39,8 +39,7 @@ Route::get('/invoice', [InvoiceController::class, 'index'])->name('invoice.index
 Route::get('/invoice/{uid}', [InvoiceController::class, 'check'])->name('invoice.check');
 Route::delete('/invoice/{uid}', [InvoiceController::class, 'delete'])->name('invoice.delete');
 
-Route::get('/shopeepay/{uid}', [InvoiceController::class, 'shopeepayRedirect'])->name('shopeepay.redirect');
 Route::post('/shopeepay/callback', [InvoiceController::class, 'shopeepayCallback'])->name('shopeepay.callback');
+Route::get('/shopeepay/{uid}', [InvoiceController::class, 'shopeepayRedirect'])->name('shopeepay.redirect');
 
-Route::get('/dana/{uid}', [InvoiceController::class, 'danaRedirect'])->name('dana.redirect');
-Route::post('/dana/callback', [InvoiceController::class, 'danaCallback'])->name('dana.callback');
+Route::get('/status-dana/{uid}', [InvoiceController::class, 'danaRedirect'])->name('dana.redirect');

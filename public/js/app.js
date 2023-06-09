@@ -20428,12 +20428,12 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
       timer: 60
     });
     var handleCheckStatus = function handleCheckStatus() {
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.get(route("shopeepay.redirect", props.invoice.id));
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.get(route("dana.redirect", props.invoice.id));
     };
     (0,_vue_runtime_core__WEBPACK_IMPORTED_MODULE_4__.onMounted)(function () {
       setTimeout(function () {
         if (props.invoice.status === "PENDING") {
-          _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.get(route("shopeepay.redirect", props.invoice.id));
+          _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.get(route("dana.redirect", props.invoice.id));
         }
       }, 3000);
     });
