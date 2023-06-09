@@ -108,7 +108,7 @@ class CheckoutController extends Controller
                         'callback_url'  => route('shopeepay.callback'),
                         'redirect_url'  => route('shopeepay.redirect', $uuid),
                         'display_name'  => 'bayar',
-                        'expired_time'  => Carbon::now('Asia/Jakarta')->addMinutes(50)->format('YmhHi')
+                        'expired_time'  => Carbon::now('Asia/Jakarta')->addMinutes(50)->format('YmdHi')
                     ]);
 
         if ($res->failed()) {
