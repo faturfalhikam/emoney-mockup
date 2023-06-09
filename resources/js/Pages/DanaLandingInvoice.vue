@@ -154,13 +154,13 @@ export default {
     });
 
     const handleCheckStatus = () => {
-      Inertia.get(route("shopeepay.redirect", props.invoice.id));
+      Inertia.get(route("dana.redirect", props.invoice.id));
     };
 
     onMounted(() => {
       setTimeout(() => {
         if (props.invoice.status === "PENDING") {
-          Inertia.get(route("shopeepay.redirect", props.invoice.id));
+          Inertia.get(route("dana.redirect", props.invoice.id));
         }
       }, 3000);
     });
