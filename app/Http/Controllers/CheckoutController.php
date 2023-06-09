@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
@@ -75,7 +76,7 @@ class CheckoutController extends Controller
             ];
 
             $data = array_merge($existing, [$invoice]);
-            Storage::put('invoice.json', json_encode($data));
+            Storage::put('invoice.json', json_encode($data, true));
 
             return redirect()->route('invoice.check', $invoice['id']);
         }
@@ -104,8 +105,10 @@ class CheckoutController extends Controller
                         'id'            => $phone,
                         'channel'       => 'SPAY',
                         'amount'        => $product['price'],
-                        'callback_url'  =>route('shopeepay.callback'),
-                        'redirect_url'  => route('shopeepay.redirect', $uuid)
+                        'callback_url'  => route('shopeepay.callback'),
+                        'redirect_url'  => route('shopeepay.redirect', $uuid),
+                        'display_name'  => 'bayar',
+                        'expired_time'  => Carbon::now('Asia/Jakarta')->addMinutes(50)->format('YmhHi')
                     ]);
 
         if ($res->failed()) {
@@ -135,7 +138,7 @@ class CheckoutController extends Controller
             ];
 
             $data = array_merge($existing, [$invoice]);
-            Storage::put('invoice.json', json_encode($data));
+            Storage::put('invoice.json', json_encode($data, true));
 
             return redirect()->route('invoice.check', $invoice['id']);
         }
@@ -195,7 +198,7 @@ class CheckoutController extends Controller
             ];
 
             $data = array_merge($existing, [$invoice]);
-            Storage::put('invoice.json', json_encode($data));
+            Storage::put('invoice.json', json_encode($data, true));
 
             return redirect()->route('invoice.check', $invoice['id']);
         }

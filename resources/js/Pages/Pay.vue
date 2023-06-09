@@ -96,11 +96,10 @@ export default {
 
     return {
       ...toRefs(state),
-      imageurl:
-        "https://picsum.photos/500/300?txt=" + props.product.name,
+      imageurl: "https://picsum.photos/500/300?txt=" + props.product.name,
       handleClickPayWithOVO,
       handleClickPayWithShopeepay,
-      handleClickPayWithSpeedcash
+      handleClickPayWithSpeedcash,
     };
   },
 };

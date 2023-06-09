@@ -54,7 +54,7 @@ class InvoiceController extends Controller
 
             $invoice['payment'] = $body;
             $replaced = $this->data->replace([$invoiceIndex => $invoice]);
-            Storage::put('invoice.json', json_encode($replaced->all()));
+            Storage::put('invoice.json', json_encode($replaced->all(), true));
 
             return Inertia::render('Invoice', [
                 'invoice' => $invoice
@@ -79,12 +79,15 @@ class InvoiceController extends Controller
         $invoice['status'] = 'CANCEL';
         $merged = array_merge($skipped->all(), [$invoice]);
 
-        Storage::put('invoice.json', json_encode($merged));
+        Storage::put('invoice.json', json_encode($merged, true));
         return redirect()->route('shopeepay.redirect', $uid);
     }
 
     private function displayShopeepayLanding($invoice)
     {
+        if ($invoice['status'] === 'CANCEL') {
+            return redirect()->route('shopeepay.redirect', $invoice['id']);
+        }
         return Inertia::render('ShopeepayLanding', [
             'invoice' => $invoice
         ]);
@@ -159,7 +162,7 @@ class InvoiceController extends Controller
             $skipped = $this->data->forget($key);
             $invoice['status'] = 'PAID';
             $merged = array_merge($skipped->all(), [$invoice]);
-            Storage::put('invoice.json', json_encode($merged));
+            Storage::put('invoice.json', json_encode($merged, true));
             return 'ACCEPTED';
         }
 
