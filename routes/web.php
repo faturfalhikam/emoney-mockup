@@ -36,3 +36,4 @@ Route::delete('/invoice/{uid}', [InvoiceController::class, 'delete'])->name('inv
 
 Route::get('/shopeepay/{uid}', [InvoiceController::class, 'shopeepayRedirect'])->name('shopeepay.redirect');
 Route::post('/shopeepay/callback', [InvoiceController::class, 'shopeepayCallback'])->name('shopeepay.callback');
+Route::get('/shopeepay/status/{uid}', [InvoiceController::class, 'shopeepayStatus'])->name('shopeepay.status');
