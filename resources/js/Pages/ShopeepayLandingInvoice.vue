@@ -151,7 +151,7 @@ export default {
     });
 
     const handleCheckStatus = () => {
-      Inertia.get(route("shopeepay.redirect", props.invoice.id));
+      Inertia.get(route("shopeepay.status", props.invoice.id));
     };
 
     onMounted(() => {
