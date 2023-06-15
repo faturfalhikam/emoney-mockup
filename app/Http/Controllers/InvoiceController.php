@@ -203,7 +203,7 @@ class InvoiceController extends Controller
                     ]);
 
 
-        return $this->displayShopeepayLanding($invoice);
+        return redirect()->route('shopeepay.redirect', $uid);
     }
 
     public function danaRedirect(string $uid)
