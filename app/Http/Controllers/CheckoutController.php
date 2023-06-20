@@ -162,6 +162,8 @@ class CheckoutController extends Controller
                 'redirect_url'  => route('dana.redirect', $uuid)
             ]);
 
+        return $res->body();
+
         if ($res->failed()) {
             return Inertia::render('Pay', [
                 'product' => $product,
