@@ -1,6 +1,7 @@
 <template>
   <GuestLayout>
     <img :src="imageurl" class="mb-2 rounded-lg" />
+    {{ error }}
     <div class="text-sm mb-1">SKU: {{ slug }}</div>
     <h1 class="text-lg font-bold">{{ product.name }}</h1>
     <h2>Rp: {{ product.price }}</h2>
