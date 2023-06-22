@@ -11,7 +11,7 @@
           :href="invoice.response.additional_data.url_web"
           class="rounded p-2 dana flex items-center justify-center text-white font-bold"
         >
-          Open Dana App
+          Open DANA App
         </a>
         <!-- <div class="text-center text-gray-400">or</div> -->
         <!-- <a
